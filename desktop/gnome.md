@@ -1,5 +1,71 @@
-My GNOME settings
-=================
+# My GNOME settings
+
+## Basic
+
+```sh
+# Disable animations
+gsettings set org.gnome.desktop.interface enable-animations false
+
+# Show weekday on top center clock
+gsettings set org.gnome.desktop.interface clock-show-weekday true
+
+# Show week numbers on calendar
+gsettings set org.gnome.desktop.calendar show-weekdate true
+
+# Favorite dock settings
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'BOTTOM'
+gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
+gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 52
+```
+
+## Low mouse sensitivity
+
+```sh
+# Mouse speed as -0.8
+gsettings set org.gnome.desktop.peripherals.mouse speed -0.8
+```
+
+## Overriding default keybindings
+
+```sh
+gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Super>e']"
+gsettings set org.gnome.mutter.keybindings toggle-tiled-left "[]"
+gsettings set org.gnome.mutter.keybindings toggle-tiled-right "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-down "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-up "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-left "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-right "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Super>Left']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Super>Right']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['<Primary><Super>Left']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['<Primary><Super>Right']"
+```
+
+## Custom keybindings
+
+```sh
+# Check current keybindings
+gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings
+
+# Create 3 custom keybindings
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']"
+
+# Launch terminal on Tilix (Super+T)
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Launch terminal on Tilix'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'tilix'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Super>t'
+
+# Screenshot by Flameshot (Ctrl+Super+Space)
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name 'Screenshot by Flameshot'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command 'flameshot gui'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding '<Primary><Super>space'
+
+# Screencast by Peek (Ctrl+Alt+Space)
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ name 'Screencast by Peek'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ command 'peek'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ binding '<Primary><Alt>space'
+```
 
 ## gnome-tweak-tool
 
@@ -36,10 +102,10 @@ sudo apt install chrome-gnome-shell
 ```
 
 2. Install chrome extension from this url;
-https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep
+   https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep
 
 > You also can install connector manually. See
-https://wiki.gnome.org/Projects/GnomeShellIntegrationForChrome/Installation for install instructions.
+> https://wiki.gnome.org/Projects/GnomeShellIntegrationForChrome/Installation for install instructions.
 
 ### No Title Bar - Forked
 
@@ -65,69 +131,9 @@ Clipboard Manager extension for Gnome-Shell - Adds a clipboard indicator to the 
 >
 > Official Repo; https://github.com/mmai/Current_screen_only_on_window_switcher
 
-Limits the windows shown on the switcher to those of the current monitor
+Limits the windows shown on the switcher to those of the current monitor.
 
-### Basic
-
-```sh
-# Disable animations
-gsettings set org.gnome.desktop.interface enable-animations false
-
-# Show weekday on top center clock
-gsettings set org.gnome.desktop.interface clock-show-weekday true
-
-# Show week numbers on calendar
-gsettings set org.gnome.desktop.calendar show-weekdate true
-
-# Favorite dock settings
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'BOTTOM'
-gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
-gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 52
-```
-
-### Overriding default keybindings
-
-```sh
-gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Super>e']"
-gsettings set org.gnome.mutter.keybindings toggle-tiled-left "[]"
-gsettings set org.gnome.mutter.keybindings toggle-tiled-right "[]"
-gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-down "[]"
-gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-up "[]"
-gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-left "[]"
-gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-right "[]"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Super>Left']"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Super>Right']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['<Primary><Super>Left']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['<Primary><Super>Right']"
-```
-
-### Custom keybindings
-
-```sh
-# Check current keybindings
-gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings
-
-# Create 3 custom keybindings
-gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']"
-
-# Launch terminal on Tilix (Super+T)
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Launch terminal on Tilix'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'tilix'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Super>t'
-
-# Screenshot by Flameshot (Ctrl+Super+Space)
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name 'Screenshot by Flameshot'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command 'flameshot gui'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding '<Primary><Super>space'
-
-# Screencast by Peek (Ctrl+Alt+Space)
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ name 'Screencast by Peek'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ command 'peek'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ binding '<Primary><Alt>space'
-```
-
-### Remove default bookmarks from Nautilus' left bar
+## Remove default bookmarks from Nautilus' left bar
 
 ```sh
 sudo sed -i "s/DESKTOP=Desktop/#DESKTOP=Desktop/g" /etc/xdg/user-dirs.defaults
