@@ -1,9 +1,8 @@
-Fonts
-=====
+# Fonts
 
 ```sh
 # Basic fonts
-sudo apt install fonts-hack fonts-firacode
+sudo apt install fonts-hack fonts-firacode fonts-jetbrains-mono
 
 # Install Meslo Nerd fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
