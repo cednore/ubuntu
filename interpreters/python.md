@@ -1,5 +1,4 @@
-Python
-======
+# Python
 
 [Python](https://www.python.org) is an interpreted high-level general-purpose programming language. Its design
 philosophy emphasizes code readability with its use of significant indentation. Its language constructs as well as its

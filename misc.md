@@ -1,5 +1,4 @@
-Misc
-====
+# Misc
 
 ## Install JetBrains Toolbox
 

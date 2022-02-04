@@ -1,5 +1,4 @@
-Chromium
-========
+# Chromium
 
 [Chromium](https://www.chromium.org) is an open-source browser project that aims to build a safer, faster, and more
 stable way for all Internet users to experience the web. Chromium serves as a base for Google Chrome, which is Chromium

@@ -1,5 +1,4 @@
-Skype for Linux
-===============
+# Skype for Linux
 
 [Skype](https://www.skype.com) is a proprietary telecommunications application that specializes in providing VoIP-based
 videotelephony, videoconferencing and voice calls. It also has instant messaging, file transfer, debit-based calls to

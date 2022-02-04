@@ -1,5 +1,4 @@
-takeout
-=======
+# takeout
 
 [Takeout](https://github.com/tighten/takeout) is a CLI tool for spinning up tiny Docker containers, one for each of your
 development environment dependencies. It's meant to be paired with a tool like Laravel Valet. It's currently compatible

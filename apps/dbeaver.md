@@ -1,5 +1,4 @@
-DBeaver
-=======
+# DBeaver
 
 [DBeaver](https://dbeaver.io) is free and open source universal database tool for developers and database
 administrators.

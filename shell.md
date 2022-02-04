@@ -1,5 +1,4 @@
-My shell setup
-==============
+# My shell setup
 
 ## Zsh
 

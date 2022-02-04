@@ -1,5 +1,4 @@
-Amazon WorkSpaces
-=================
+# Amazon WorkSpaces
 
 [Amazon WorkSpaces](https://aws.amazon.com/workspaces) is a managed, secure Desktop-as-a-Service (DaaS) solution. You
 can use Amazon WorkSpaces to provision either Windows or Linux desktops in just a few minutes and quickly scale to

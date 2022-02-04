@@ -1,5 +1,4 @@
-Visual Studio Code & VSCodium
-=============================
+# Visual Studio Code & VSCodium
 
 ## Visual Studio Code
 

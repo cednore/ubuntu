@@ -1,5 +1,4 @@
-My favorite utilities
-=====================
+# My favorite utilities
 
 ## Synaptic
 

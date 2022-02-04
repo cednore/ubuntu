@@ -1,5 +1,4 @@
-Kill switch
-===========
+# Kill switch
 
 ```sh
 # Environment setup

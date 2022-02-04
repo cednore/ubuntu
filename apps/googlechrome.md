@@ -1,5 +1,4 @@
-Google Chrome
-=============
+# Google Chrome
 
 [Google Chrome](https://www.google.com/chrome) is a cross-platform web browser developed by Google.
 

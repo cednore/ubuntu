@@ -1,5 +1,4 @@
-Docker
-======
+# Docker
 
 [Docker](https://www.docker.com) is a set of platform as a service products that use OS-level virtualization to deliver
 software in packages called containers. Containers are isolated from one another and bundle their own software,

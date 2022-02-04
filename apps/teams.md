@@ -1,5 +1,4 @@
-Microsoft Teams
-===============
+# Microsoft Teams
 
 [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software) for Linux is your chat-centered
 workspace in Office 365.

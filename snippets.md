@@ -1,5 +1,4 @@
-Useful snippets
-===============
+# Useful snippets
 
 ```sh
 # Clear recent files list on nautilus

@@ -1,5 +1,4 @@
-Sublime Text
-============
+# Sublime Text
 
 [Sublime Text](https://www.sublimetext.com) is a sophisticated text editor for code, markup and prose.
 

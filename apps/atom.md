@@ -1,5 +1,4 @@
-Atom
-====
+# Atom
 
 [Atom](https://atom.io) is a free and open-source text and source code editor for macOS, Linux, and Microsoft Windows
 with support for plug-ins written in JavaScript, and embedded Git Control. Developed by GitHub, Atom is a desktop

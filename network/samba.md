@@ -1,5 +1,4 @@
-Samba server
-============
+# Samba server
 
 [Samba](https://www.samba.org) is a free software re-implementation of the SMB networking protocol, and was originally
 developed by Andrew Tridgell. Samba provides file and print services for various Microsoft Windows clients and can

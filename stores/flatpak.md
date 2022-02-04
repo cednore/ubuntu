@@ -1,5 +1,4 @@
-Flatpak
-=======
+# Flatpak
 
 [Flatpak](https://flatpak.org) is a utility for software deployment and package management for Linux. It is advertised
 as offering a sandbox environment in which users can run application software in isolation from the rest of the system.
