@@ -1,5 +1,4 @@
-AnyDesk
-=======
+# AnyDesk
 
 [AnyDesk](https://anydesk.com) is a closed source remote desktop application distributed by AnyDesk Software GmbH. The
 proprietary software program provides platform independent remote access to personal computers and other devices running
@@ -15,4 +14,11 @@ sudo apt update
 
 # Install AnyDesk
 sudo apt install anydesk
+```
+
+## Tweaks
+
+```sh
+# Disalbe auto-start
+sudo systemctl disable anydesk.service
 ```
