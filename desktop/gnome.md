@@ -17,13 +17,12 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'BOTTOM'
 gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed false
 gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 52
-```
 
-## Low mouse sensitivity
-
-```sh
 # Mouse speed as -0.8
 gsettings set org.gnome.desktop.peripherals.mouse speed -0.8
+
+# Disable middle-click paste
+gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false
 ```
 
 ## Overriding default keybindings
