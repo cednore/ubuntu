@@ -39,7 +39,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 ```sh
 plugins=(
-    # other plugins...
-    zsh-autosuggestions
+  # other plugins...
+  zsh-autosuggestions
 )
 ```

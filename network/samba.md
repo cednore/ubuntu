@@ -31,10 +31,10 @@ sudo ufw allow samba
 # Add a smb share target; [public]
 mkdir $HOME/Public
 echo "[public]\n\
-    comment = Public files on $(cat /etc/hostname)\n\
-    path = $HOME/Public\n\
-    read only = no\n\
-    browsable = yes" | sudo tee -a /etc/samba/smb.conf
+  comment = Public files on $(cat /etc/hostname)\n\
+  path = $HOME/Public\n\
+  read only = no\n\
+  browsable = yes" | sudo tee -a /etc/samba/smb.conf
 
 # Restart samba daemon
 sudo service smbd restart
