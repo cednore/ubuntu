@@ -1,5 +1,13 @@
 # My GNOME settings
 
+## Utilities
+
+```sh
+sudo apt install \
+  gnome-tweaks \ # GNOME Tweak Tool
+  wmctrl # Wmctrl
+```
+
 ## Basic
 
 ```sh
@@ -48,7 +56,12 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['<Prima
 gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings
 
 # Create 3 custom keybindings
-gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings \
+  "[ \
+    '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', \
+    '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', \
+    '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/' \
+  ]"
 
 # Launch terminal on Tilix (Super+T)
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Launch terminal on Tilix'
@@ -64,15 +77,6 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ name 'Screencast by Peek'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ command 'peek'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ binding '<Primary><Alt>space'
-```
-
-## gnome-tweak-tool
-
-GNOME Tweak Tool allows the adjustment of several advanced GNOME options that can't be configured in
-gnome-control-center.
-
-```sh
-sudo apt install gnome-tweaks
 ```
 
 ## gnome-shell-extensions
