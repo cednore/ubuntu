@@ -172,7 +172,7 @@ git clone https://github.com/jessarcher/zsh-artisan.git ${ZSH_CUSTOM:-~/.oh-my-z
 
 ### Restore my SSH setup
 
-Follow the instructions in my `ssh` repo (private); https://github.com/cednore/ssh
+Follow the instructions in my `.ssh` repo (private); https://github.com/cednore/.ssh
 
 > **_INFO:_** Curious how to clone a private repo without ssh key? I have my GPG-encrypted (symmetrically
 > password-protected) primary ssh key and OpenVPN client file shared on the wild internet. You can check them on my
@@ -180,7 +180,7 @@ Follow the instructions in my `ssh` repo (private); https://github.com/cednore/s
 
 ### Restore my VPN setup
 
-Follow the instructions in my `ovpn-clients` repo (private); https://github.com/cednore/ovpn-clients
+Follow the instructions in my `.openvpn` repo (private); https://github.com/cednore/.openvpn
 
 ### Kill switch
 
