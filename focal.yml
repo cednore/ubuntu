@@ -1,0 +1,57 @@
+---
+- name: Provision focal
+  hosts: localhost
+  connection: local
+  become: true
+  vars:
+    master_password: ''
+  tasks:
+    - name: Install aptitude
+      apt:
+        name: aptitude
+        state: latest
+        update_cache: true
+    - name: Install required system packages
+      apt:
+        pkg:
+          - git
+          - curl
+          - wget
+          - gettext
+          - gawk
+          - tree
+          - gnupg
+          - gnupg2
+          - ca-certificates
+          - lsb-release
+          - software-properties-common
+          - apt-transport-https
+          - build-essential
+          # Network utilities
+          - net-tools
+          - ufw
+          - nmap
+          - nethogs
+          - dnsmasq
+          - cifs-utils
+          - whois
+          - iftop
+          - bmon
+          # Shell
+          - zsh
+          - tmux
+          # Editors
+          - vim
+          - neovim
+          - emacs
+          # Misc utilities
+          - jq
+          - imagemagick
+          - ffmpeg
+          - p7zip-full
+          # Python
+          - python3-pip
+          - virtualenv
+          - python3-setuptools
+        state: latest
+        update_cache: true
