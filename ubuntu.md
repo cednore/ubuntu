@@ -300,12 +300,15 @@ sudo add-apt-repository ppa:apandada1/blanket
 
 # Install apt packages
 sudo apt install \
+  taskwarrior
   xclip \
   qrencode zbar-tools \
   filezilla \
   dconf-editor \
   synaptic \
   gnome-boxes \
+  stress cpufrequtils fancontrol \
+  fortune cowsay \
   gnome-sound-recorder \
   flameshot peek \
   fsearch \
