@@ -147,9 +147,8 @@ sudo apt install \
 ### Shell setup
 
 ```bash
-# Install zsh and change default shell as zsh
+# Install zsh
 sudo apt install zsh
-chsh -s $(which zsh)
 
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -336,6 +335,8 @@ gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_T
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ bold-color-set false
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ cursor-colors-set false
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ highlight-colors-set false
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ use-custom-command true
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ custom-command 'zsh'
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ use-system-font false
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ use-theme-colors false
 ```
