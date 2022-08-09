@@ -5,7 +5,7 @@
 ## Table of Contents
 
 1. [Cloning this gist](#cloning-this-gist)
-2. [Postinstall impish](#postinstall-impish)
+2. [Postinstall focal](#postinstall-focal)
    - [System tweaks](#system-tweaks)
    - [Basic apt packages](#basic-apt-packages)
    - [Shell setup](#shell-setup)
@@ -87,7 +87,7 @@ mkdir -p ~/workspace/cednore && cd ~/workspace/cednore
 git clone git@gist.github.com:65a11bef1fec40caef10e0a106fd4a4c.git ubuntu
 ```
 
-## Postinstall impish
+## Postinstall focal
 
 ### System tweaks
 
@@ -100,7 +100,7 @@ sudo sed -i "s/quick_boot=\"1\"/quick_boot=\"0\"/g" /etc/grub.d/30_os-prober
 sudo update-grub
 
 # Kill snap
-sudo apt autoremove --purge snapd gnome-software-plugin-snap
+sudo apt autoremove --purge snapd
 rm -rf ~/snap && sudo rm -rf /snap \
   /var/cache/snapd \
   /var/lib/snapd \
@@ -113,7 +113,7 @@ sudo dd if=/dev/zero of=/swapfile bs=1M count=32768
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
-sudo reboot
+reboot
 
 # Disable suspend and hibernation
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
@@ -134,14 +134,20 @@ sudo apt purge "rhythmbox*"
 
 ```bash
 sudo apt install \
-  git curl wget gettext gawk tree \
-  gnupg gnupg2 ca-certificates lsb-release \
+  git curl wget \
+  gettext gawk tree \
+  ca-certificates gnupg gnupg2 lsb-release \
   software-properties-common apt-transport-https \
   build-essential \
-  ufw net-tools nmap nethogs dnsmasq cifs-utils whois \
-  tmux vim neovim \
-  jq imagemagick ffmpeg \
-  p7zip-full
+  ufw net-tools nmap ngrep ncat nethogs dnsmasq cifs-utils whois iftop \
+  htop \
+  stress cpufrequtils fancontrol \
+  fortune cowsay taskwarrior \
+  qrencode zbar-tools \
+  tmux vim neovim nano \
+  jq p7zip-full \
+  imagemagick ffmpeg \
+  xclip wmctrl
 ```
 
 ### Shell setup
@@ -243,22 +249,6 @@ sudo apt install openssh-server
 sudo ufw allow ssh
 ```
 
-### VNC server
-
-```bash
-# Replace `gnome-remote-desktop` with `x11vnc`
-sudo apt purge gnome-remote-desktop && sudo apt install x11vnc
-
-# Set vnc password
-x11vnc -storepasswd $HOME/.vnc/passwd
-
-# Create logfile
-mkdir -p ~/.logs && touch ~/.logs/x11vnc.log
-
-# Start the server
-x11vnc -display $DISPLAY -forever -shared -rfbauth ~/.vnc/passwd -o ~/.logs/x11vnc.log
-```
-
 ### Samba server
 
 ```bash
@@ -280,7 +270,7 @@ sudo service smbd restart
 
 ```bash
 # Basic fonts
-sudo apt install fonts-hack fonts-firacode fonts-jetbrains-mono
+sudo apt install fonts-hack fonts-firacode
 
 # Install Meslo Nerd fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
@@ -299,16 +289,10 @@ sudo add-apt-repository ppa:apandada1/blanket
 
 # Install apt packages
 sudo apt install \
-  taskwarrior
-  xclip \
-  qrencode zbar-tools \
   filezilla \
   dconf-editor \
   synaptic \
-  gnome-boxes \
-  stress cpufrequtils fancontrol \
-  fortune cowsay \
-  gnome-sound-recorder \
+  gnome-boxes gnome-clocks gnome-sound-recorder \
   flameshot peek \
   fsearch \
   blanket
@@ -380,7 +364,7 @@ curl -fsSL https://deno.land/install.sh | sh
 ### PHP
 
 ```bash
-# Insert Ondrej PHP PPA and install php 8.0 along with extensions
+# Insert Ondrej PHP PPA and install php 8.1 along with extensions
 sudo add-apt-repository ppa:ondrej/php
 sudo apt install php8.1
 sudo apt install php8.1-curl php8.1-gd php8.1-xml php8.1-soap php8.1-mbstring php8.1-mysql php8.1-pgsql php8.1-zip php8.1-xdebug php8.1-dev
