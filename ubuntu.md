@@ -308,21 +308,22 @@ sudo apt install tilix
 eval DEFAULT_TILIX_PROFILE=$(gsettings get com.gexperts.Tilix.ProfilesList default)
 gsettings set com.gexperts.Tilix.Settings terminal-title-style 'none'
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ visible-name 'cednore'
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ login-shell true
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ use-custom-command true
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ custom-command 'zsh'
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ default-size-columns 120
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ background-transparency-percent 12
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ use-system-font false
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ font 'MesloLGS Nerd Font Mono 11'
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ background-color '#132738'
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ foreground-color '#FFFFFF'
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ palette "['#000000', '#FF0000', '#38DE21', '#FFE50A', '#1460D2', '#FF005D', '#00BBBB', '#BBBBBB', '#555555', '#F40E17', '#3BD01D', '#EDC809', '#5555FF', '#FF55FF', '#6AE3FA', '#FFFFFF']"
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ badge-color '#132738'
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ badge-color-set true
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ badge-color '#132738'
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ bold-color-set false
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ cursor-colors-set false
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ highlight-colors-set false
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ use-custom-command true
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ custom-command 'zsh'
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ use-system-font false
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ use-theme-colors false
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ palette "['#000000', '#FF0000', '#38DE21', '#FFE50A', '#1460D2', '#FF005D', '#00BBBB', '#BBBBBB', '#555555', '#F40E17', '#3BD01D', '#EDC809', '#5555FF', '#FF55FF', '#6AE3FA', '#FFFFFF']"
 ```
 
 ## Development atmosphere
