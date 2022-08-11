@@ -15,7 +15,6 @@
    - [Kill switch](#kill-switch)
    - [The Wonder Shaper](#the-wonder-shaper)
    - [OpenSSH server](#openssh-server)
-   - [VNC server](#vnc-server)
    - [Samba server](#samba-server)
    - [Install fonts](#install-fonts)
    - [Favorite utilities](#favorite-utilities)
@@ -75,7 +74,6 @@
    - [My GNOME settings](#my-gnome-settings)
    - [My GNOME keybindings](#my-gnome-keybindings)
    - [My GNOME extensions](#my-gnome-extensions)
-6. [Pre re-install OS](#pre-re-install-os)
 
 ## Cloning this gist
 
@@ -1059,24 +1057,3 @@ gnome-extensions enable pixel-saver@deadalnix.me
 # code-nautilus
 wget -qO- https://raw.githubusercontent.com/harry-cpp/code-nautilus/master/install.sh | bash
 ```
-
-## Pre re-install OS
-
-1. Backup dotfiles
-2. Backup all Docker images
-
-```bash
-# Backup
-docker save $(docker images -q) -o /path/to/save/dockers_images.tar
-docker images | sed '1d' | awk '{print $1 " " $2 " " $3}' > dockers_images.list
-
-# Restore
-docker load -i /path/to/save/dockers_images.tar
-while read REPOSITORY TAG IMAGE_ID
-do
-  echo "== Tagging $REPOSITORY $TAG $IMAGE_ID =="
-  docker tag "$IMAGE_ID" "$REPOSITORY:$TAG"
-done < dockers_images.list
-```
-
-3.
