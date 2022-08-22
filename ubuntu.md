@@ -132,19 +132,19 @@ sudo apt purge "rhythmbox*"
 
 ```bash
 sudo apt install \
-  git curl wget \
+  git curl wget etckeeper \
   gettext gawk tree \
   ca-certificates gnupg gnupg2 lsb-release \
   software-properties-common apt-transport-https \
   build-essential \
   ufw net-tools nmap ngrep ncat nethogs dnsmasq cifs-utils whois iftop \
   htop \
-  stress cpufrequtils fancontrol \
+  stress cpufrequtils fancontrol neofetch \
   fortune cowsay taskwarrior \
   qrencode zbar-tools \
   tmux vim neovim nano \
   jq p7zip-full \
-  imagemagick ffmpeg \
+  imagemagick ffmpeg optipng \
   xclip wmctrl
 ```
 
@@ -165,6 +165,31 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 # Install zsh-artisan
 git clone https://github.com/jessarcher/zsh-artisan.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/artisan
+```
+
+### Emacs
+
+```bash
+sudo apt install emacs
+```
+
+### Neovim
+
+```bash
+# Prerequisites
+sudo apt install lua5.3
+
+# Insert apt repositories
+sudo add-apt-repository ppa:neovim-ppa/unstable
+
+# Install neovim
+sudo apt install neovim
+
+# Install packer
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+# Install other plugins
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 ```
 
 ### Restore my dotfiles
@@ -290,7 +315,7 @@ sudo apt install \
   filezilla \
   dconf-editor \
   synaptic \
-  gnome-boxes gnome-clocks gnome-sound-recorder \
+  gnome-boxes gnome-clocks gnome-sound-recorder gpick \
   flameshot peek \
   fsearch \
   blanket
