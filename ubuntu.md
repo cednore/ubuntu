@@ -4,11 +4,11 @@
 
 ## Table of Contents
 
-1. [Cloning this gist](#cloning-this-gist)
-2. [Postinstall focal](#postinstall-focal)
+1. [Postinstall focal](#postinstall-focal)
    - [System tweaks](#system-tweaks)
    - [Basic apt packages](#basic-apt-packages)
    - [Shell setup](#shell-setup)
+   - [Audio setup](#audio-setup)
    - [Restore my dotfiles](#restore-my-dotfiles)
    - [Restore my SSH setup](#restore-my-ssh-setup)
    - [Restore my VPN setup](#restore-my-vpn-setup)
@@ -19,7 +19,7 @@
    - [Install fonts](#install-fonts)
    - [Favorite utilities](#favorite-utilities)
      - [Tilix](#tilix)
-3. [Development atmosphere](#development-atmosphere)
+2. [Development atmosphere](#development-atmosphere)
    - [Linuxbrew](#linuxbrew)
    - [Node.js](#nodejs)
    - [Deno](#deno)
@@ -48,7 +48,7 @@
    - [Anchor](#anchor)
    - [Flow CLI](#flow-cli)
    - [Flyctl CLI](#flyctl-cli)
-4. [Install apps](#install-apps)
+3. [Install apps](#install-apps)
    - [Google Chrome](#google-chrome)
    - [Microsoft Edge](#microsoft-edge)
    - [Opera](#opera)
@@ -69,21 +69,11 @@
    - [Slack](#slack)
    - [Microsoft Teams](#microsoft-teams)
    - [Flatpak](#flatpak)
-5. [GNOME setup](#gnome-setup)
+4. [GNOME setup](#gnome-setup)
    - [GNOME utilities](#gnome-utilities)
    - [My GNOME settings](#my-gnome-settings)
    - [My GNOME keybindings](#my-gnome-keybindings)
    - [My GNOME extensions](#my-gnome-extensions)
-
-## Cloning this gist
-
-```bash
-# Go inside personal workspace folder
-mkdir -p ~/workspace/cednore && cd ~/workspace/cednore
-
-# Clone this gist
-git clone git@gist.github.com:65a11bef1fec40caef10e0a106fd4a4c.git ubuntu
-```
 
 ## Postinstall focal
 
@@ -190,6 +180,45 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 
 # Install other plugins
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+```
+
+### Audio setup
+
+```bash
+# insert pipewire and wireplumber ppa
+sudo add-apt-repository ppa:pipewire-debian/pipewire-upstream
+sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream
+
+# install pipewire packages
+sudo apt install \
+  pipewire{,-{doc,audio-client-libraries,pulse,bin,locales,tests}} \
+  libpipewire-0.3-{0,dev,modules} \
+  libpipewire-module-x11-bell \
+  libspa-0.2-{bluetooth,dev,jack,modules} \
+  gstreamer1.0-pipewire
+
+# install wireplumber packages
+sudo apt install \
+  wireplumber{,-doc} \
+  libwireplumber-0.4-{0,dev} \
+  gir1.2-wp-0.4
+
+# disable pulseaudio server
+systemctl --user --now disable pulseaudio.{socket,service}
+systemctl --user mask pulseaudio
+
+# enable pipewire server and wireplumber service
+systemctl --user --now enable pipewire{,-pulse}.{socket,service}
+systemctl --user --now enable wireplumber.service
+
+# reboot system
+reboot
+
+# verify if pipewire server is running
+pactl info | grep '^Server Name' # output should be `Server Name: PulseAudio (on PipeWire x.y.z)`
+
+# install alsa-tools-gui
+sudo apt install alsa-tools-gui
 ```
 
 ### Restore my dotfiles
