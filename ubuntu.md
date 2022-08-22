@@ -185,6 +185,9 @@ nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 ### Audio setup
 
 ```bash
+# install pavucontrol
+sudo apt install pavucontrol
+
 # insert pipewire and wireplumber ppa
 sudo add-apt-repository ppa:pipewire-debian/pipewire-upstream
 sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream
