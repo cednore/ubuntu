@@ -361,24 +361,40 @@ sudo apt install tilix
 
 # Favorite settings
 eval DEFAULT_TILIX_PROFILE=$(gsettings get com.gexperts.Tilix.ProfilesList default)
+
 gsettings set com.gexperts.Tilix.Settings terminal-title-style 'none'
+gsettings set com.gexperts.Tilix.Settings window-style 'borderless'
+
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ visible-name 'cednore'
+
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ terminal-bell 'icon-sound'
+
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ login-shell true
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ use-custom-command true
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ custom-command 'zsh'
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ custom-command 'tmux'
+
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ cursor-blink-mode 'on'
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ cursor-shape 'block'
+
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ scrollback-lines 65536
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ default-size-columns 120
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ background-transparency-percent 12
+
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ use-system-font false
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ font 'MesloLGS Nerd Font Mono 11'
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ background-color '#132738'
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ foreground-color '#FFFFFF'
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ font 'MesloLGS Nerd Font Mono 9'
+
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ background-transparency-percent 0
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ dim-transparency-percent 0
+
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ use-theme-colors false
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ background-color '#272822'
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ foreground-color '#F8F8F2'
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ badge-color '#272822'
+gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ palette "['#75715E', '#F92672', '#A6E22E', '#F4BF75', '#66D9EF', '#AE81FF', '#2AA198', '#F9F8F5', '#272822', '#F92672', '#A6E22E', '#F4BF75', '#66D9EF', '#AE81FF', '#2AA198', '#F8F8F2']"
+
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ badge-color-set true
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ badge-color '#132738'
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ bold-color-set false
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ cursor-colors-set false
 gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ highlight-colors-set false
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ use-theme-colors false
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ palette "['#000000', '#FF0000', '#38DE21', '#FFE50A', '#1460D2', '#FF005D', '#00BBBB', '#BBBBBB', '#555555', '#F40E17', '#3BD01D', '#EDC809', '#5555FF', '#FF55FF', '#6AE3FA', '#FFFFFF']"
 ```
 
 ## Development atmosphere
