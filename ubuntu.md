@@ -18,7 +18,6 @@
    - [Samba server](#samba-server)
    - [Install fonts](#install-fonts)
    - [Favorite utilities](#favorite-utilities)
-     - [Tilix](#tilix)
 2. [Development atmosphere](#development-atmosphere)
    - [Linuxbrew](#linuxbrew)
    - [Node.js](#nodejs)
@@ -351,50 +350,6 @@ sudo apt install \
   flameshot peek \
   fsearch \
   blanket
-```
-
-#### Tilix
-
-```bash
-# Install
-sudo apt install tilix
-
-# Favorite settings
-eval DEFAULT_TILIX_PROFILE=$(gsettings get com.gexperts.Tilix.ProfilesList default)
-
-gsettings set com.gexperts.Tilix.Settings terminal-title-style 'none'
-gsettings set com.gexperts.Tilix.Settings window-style 'borderless'
-
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ visible-name 'cednore'
-
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ terminal-bell 'icon-sound'
-
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ login-shell true
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ use-custom-command true
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ custom-command 'tmux'
-
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ cursor-blink-mode 'on'
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ cursor-shape 'block'
-
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ scrollback-lines 65536
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ default-size-columns 120
-
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ use-system-font false
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ font 'MesloLGS Nerd Font Mono 9'
-
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ background-transparency-percent 0
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ dim-transparency-percent 0
-
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ use-theme-colors false
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ background-color '#272822'
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ foreground-color '#F8F8F2'
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ badge-color '#272822'
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ palette "['#75715E', '#F92672', '#A6E22E', '#F4BF75', '#66D9EF', '#AE81FF', '#2AA198', '#F9F8F5', '#272822', '#F92672', '#A6E22E', '#F4BF75', '#66D9EF', '#AE81FF', '#2AA198', '#F8F8F2']"
-
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ badge-color-set true
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ bold-color-set false
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ cursor-colors-set false
-gsettings set com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/$DEFAULT_TILIX_PROFILE/ highlight-colors-set false
 ```
 
 ## Development atmosphere
@@ -1043,19 +998,6 @@ sed -i "s/XDG_VIDEOS_DIR/#XDG_VIDEOS_DIR/g" ~/.config/user-dirs.dirs
 ### My GNOME keybindings
 
 ```bash
-# Overriding default keybindings
-gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Super>e']"
-gsettings set org.gnome.mutter.keybindings toggle-tiled-left "[]"
-gsettings set org.gnome.mutter.keybindings toggle-tiled-right "[]"
-gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-down "[]"
-gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-up "[]"
-gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-left "[]"
-gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-right "[]"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Super>Left']"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Super>Right']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['<Primary><Super>Left']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['<Primary><Super>Right']"
-
 # Check current custom keybindings
 gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings
 
@@ -1063,36 +1005,18 @@ gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings \
   "[ \
     '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', \
-    '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', \
-    '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', \
-    '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', \
-    '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/' \
+    '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/' \
   ]"
 
-# Open TODO list (Super+G)
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Open TODO list'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'gnome-todo'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Super>g'
-
-# Launch terminal on Tilix (Super+T)
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name 'Launch terminal on Tilix'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command 'tilix'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding '<Super>t'
-
 # Screenshot by Flameshot (Ctrl+Super+Space)
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ name 'Screenshot by Flameshot'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ command 'flameshot gui'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ binding '<Primary><Super>space'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Screenshot by Flameshot'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'flameshot gui'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Primary><Super>space'
 
 # Screencast by Peek (Ctrl+Alt+Space)
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ name 'Screencast by Peek'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ command 'peek'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ binding '<Primary><Alt>space'
-
-# Toggle Mic (Super+B)
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/ name 'Toggle Mic'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/ command "bash $HOME/.scripts/toggle-mic.sh"
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/ binding '<Super>b'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name 'Screencast by Peek'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command 'peek'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding '<Primary><Alt>space'
 ```
 
 ### My GNOME extensions
