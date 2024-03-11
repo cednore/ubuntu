@@ -1,0 +1,59 @@
+---
+- name: Provision focal on wsl
+  hosts: localhost
+  connection: local
+  become: true
+  vars:
+    github_pat: ""
+    master_password: ""
+  tasks:
+    - name: Install aptitude
+      apt:
+        name: aptitude
+        state: latest
+        update_cache: true
+    - name: Install required system packages
+      apt:
+        pkg:
+          - git
+          - curl
+          - wget
+          - gettext
+          - gawk
+          - tree
+          - gnupg
+          - gnupg2
+          - ca-certificates
+          - lsb-release
+          - software-properties-common
+          - apt-transport-https
+          - build-essential
+
+          # network utilities
+          - net-tools
+          - nmap
+          - nethogs
+          - cifs-utils
+          - whois
+          - iftop
+          - bmon
+
+          # shell
+          - zsh
+          - tmux
+
+          # editors
+          - nano
+
+          # python
+          - python3-pip
+          - virtualenv
+          - python3-setuptools
+
+          # misc
+          - jq
+          - imagemagick
+          - ffmpeg
+          - p7zip-full
+        state: latest
+        update_cache: true
