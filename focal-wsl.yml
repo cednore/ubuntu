@@ -6,13 +6,15 @@
   vars:
     github_pat: ""
     master_password: ""
+
   tasks:
-    - name: Install aptitude
+    - name: install aptitude and `apt update`
       apt:
         name: aptitude
         state: latest
         update_cache: true
-    - name: Install required system packages
+
+    - name: install apt packages
       apt:
         pkg:
           - git
@@ -28,10 +30,13 @@
           - software-properties-common
           - apt-transport-https
           - build-essential
+          - htop
 
           # network utilities
           - net-tools
           - nmap
+          - ngrep
+          - ncat
           - nethogs
           - cifs-utils
           - whois
@@ -56,4 +61,35 @@
           - ffmpeg
           - p7zip-full
         state: latest
-        update_cache: true
+
+    - name: shell setup
+      block:
+        - name: install zsh
+          apt:
+            pkg: zsh
+            state: latest
+            update_cache: true
+
+        - name: install oh-my-zsh
+          shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
+
+        - name: install Powerlevel10k
+          git:
+            repo: https://github.com/romkatv/powerlevel10k.git
+            dest: "{ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+            depth: 1
+            single_branch: true
+
+        - name: install zsh-autosuggestions
+          git:
+            repo: https://github.com/zsh-users/zsh-autosuggestions.git
+            dest: "{ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+            depth: 1
+            single_branch: true
+
+        - name: install zsh-artisan
+          git:
+            repo: https://github.com/jessarcher/zsh-artisan.git
+            dest: "{ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/artisan"
+            depth: 1
+            single_branch: true
